@@ -1,5 +1,7 @@
 {
     "dependencies": {
+        "dotenv": "^6.2.0",
+        "express": "^4.16.4",
         "next": "^7.0.2",
         "next-redux-wrapper": "^2.1.0",
         "react": "^16.7.0",
@@ -15,6 +17,12 @@
     "scripts": {
         "dev": "next",
         "build": "next build",
-        "start": "next start"
+        "start": "next start",
+        "heroku-postbuild": "yarn build",
+        "push": "git push origin master && git push heroku master"
+    },
+    "engines": {
+        "node": "11.6.0",
+        "yarn": "1.12.3"
     }
 }
