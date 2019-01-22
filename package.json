@@ -17,7 +17,7 @@
     "scripts": {
         "dev": "next",
         "build": "next build",
-        "start": "next start",
+        "start": "next start -p $PORT",
         "heroku-postbuild": "yarn build",
         "push": "git push origin master && git push heroku master"
     },
