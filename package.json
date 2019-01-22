@@ -1,9 +1,13 @@
 {
     "dependencies": {
+        "@babel/core": "^7.2.2",
+        "@babel/node": "^7.2.2",
+        "@babel/preset-env": "^7.3.1",
         "dotenv": "^6.2.0",
         "express": "^4.16.4",
         "next": "^7.0.2",
         "next-redux-wrapper": "^2.1.0",
+        "nodemon": "^1.18.9",
         "react": "^16.7.0",
         "react-dom": "^16.7.0",
         "react-redux": "^6.0.0",
@@ -15,9 +19,9 @@
     "license": "MIT",
     "author": "Ashwanth A R",
     "scripts": {
-        "dev": "next",
+        "dev": "nodemon server.js --watch server --exec babel-node --presets=@babel/preset-env",
         "build": "next build",
-        "start": "next start -p $PORT",
+        "start": "NODE_ENV=production nodemon server.js --watch server --exec babel-node --presets=@babel/preset-env",
         "heroku-postbuild": "yarn build",
         "push": "git push origin master && git push heroku master"
     },
