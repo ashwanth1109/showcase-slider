@@ -9,7 +9,7 @@ import { extractURL } from "../utility";
 // index Component
 // ------------------------------------------------------------
 class Index extends React.Component {
-    async componentDidMount() {
+    async componentDidMount({ updateState } = this.props) {
         const res = await fetch("https://api.unsplash.com/photos/", {
             method: "GET",
             headers: {
@@ -18,10 +18,9 @@ class Index extends React.Component {
         });
         const data = await res.json();
         const urls = extractURL(data);
-        console.log(urls);
+        updateState("IMAGES", urls);
     }
     render() {
-        console.log(this.state);
         return (
             <div style={s.container}>
                 <ProjectShowcase />
@@ -33,4 +32,4 @@ class Index extends React.Component {
 // ------------------------------------------------------------
 // export index
 // ------------------------------------------------------------
-export default withRedux(Index, true, false);
+export default withRedux(Index, true, true);
