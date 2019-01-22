@@ -1,0 +1,20 @@
+{
+    "dependencies": {
+        "next": "^7.0.2",
+        "next-redux-wrapper": "^2.1.0",
+        "react": "^16.7.0",
+        "react-dom": "^16.7.0",
+        "react-redux": "^6.0.0",
+        "redux": "^4.0.1"
+    },
+    "name": "showcase-slider",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "author": "Ashwanth A R",
+    "scripts": {
+        "dev": "next",
+        "build": "next build",
+        "start": "next start"
+    }
+}
