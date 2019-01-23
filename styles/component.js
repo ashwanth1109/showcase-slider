@@ -28,7 +28,7 @@ export const projectShowcase = {
     user: {
         position: "absolute",
         color: "#fff",
-        bottom: "5px",
+        bottom: "7.5px",
         left: "25px",
         zIndex: "1"
     },
@@ -46,7 +46,7 @@ export const projectShowcase = {
     },
     infoContainer: {
         width: "100%",
-        height: "30px",
+        height: "35px",
         position: "absolute",
         bottom: "0px",
         padding: "0px 30px",
@@ -67,8 +67,7 @@ export const projectShowcase = {
         height: "10px",
         borderRadius: "6px",
         border: "1px solid #fff",
-        margin: "0 3.5px",
-        transition: "2s ease-in-out background-color"
+        margin: "0 3.5px"
     },
     selected: {
         backgroundColor: "#fff"
@@ -80,7 +79,7 @@ export const projectShowcase = {
         ...flex.row,
         position: "absolute",
         width: "100%",
-        height: "30px",
+        height: "35px",
         bottom: "0px",
         left: "0px"
     }
