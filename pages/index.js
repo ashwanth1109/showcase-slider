@@ -7,13 +7,13 @@ import ProjectShowcase from "../components/ProjectShowcase";
 // ------------------------------------------------------------
 // index Component
 // ------------------------------------------------------------
-class Index extends React.Component {
-    render() {
-        return (
-            <div style={s.container}>
-                {/* Project Showcase Component */}
+const Index = ({ images1, images2, images3, images4 }) => {
+    return (
+        <div style={s.container}>
+            {/* Project Showcase Component */}
+            <div style={s.gridItem}>
                 <ProjectShowcase
-                    images={this.props.images1} // images array state from mapState
+                    images={images1} // images array state from mapState
                     actionType="IMAGES1" // redux action dispatcher type to store state
                     query="office" // query term for images
                     items={3} // should be between 2 - 10
@@ -22,8 +22,10 @@ class Index extends React.Component {
                     stayTime={2} // time component waits on each image
                     transitionTime={2} // time component takes to transition slides
                 />
+            </div>
+            <div style={s.gridItem}>
                 <ProjectShowcase
-                    images={this.props.images2}
+                    images={images2}
                     actionType="IMAGES2"
                     query="space"
                     items={5}
@@ -33,9 +35,33 @@ class Index extends React.Component {
                     transitionTime={1}
                 />
             </div>
-        );
-    }
-}
+            <div style={s.gridItem}>
+                <ProjectShowcase
+                    images={images3}
+                    actionType="IMAGES3"
+                    query="mountains"
+                    items={5}
+                    completeColor="#ffffff80"
+                    incompleteColor="#000000AA"
+                    stayTime={3}
+                    transitionTime={1}
+                />
+            </div>
+            <div style={s.gridItem}>
+                <ProjectShowcase
+                    images={images4}
+                    actionType="IMAGES4"
+                    query="sea"
+                    items={5}
+                    completeColor="#ffffff80"
+                    incompleteColor="#000000AA"
+                    stayTime={3}
+                    transitionTime={1}
+                />
+            </div>
+        </div>
+    );
+};
 // ------------------------------------------------------------
 // export index with mapState integration
 // ------------------------------------------------------------
