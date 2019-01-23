@@ -1,4 +1,7 @@
-import { bg, flex, fCenter, fSize, pos, h, m } from "./style";
+// ------------------------------------------------------------
+// import dependencies
+// ------------------------------------------------------------
+import { bg, flex, fSize, pos, h } from "./style";
 
 // ------------------------------------------------------------
 // project showcase component
