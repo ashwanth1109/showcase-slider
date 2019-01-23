@@ -15,7 +15,10 @@ class MyDoc extends Document {
                         name="viewport"
                         content="width=device-width, initial-scale=1, shrink-to-fit=no"
                     />
-
+                    <link
+                        href="https://fonts.googleapis.com/css?family=Open+Sans"
+                        rel="stylesheet"
+                    />
                     {/* global styles go here - also hover, keyframe animations etc. */}
                     <style>{`
                         * {
@@ -36,7 +39,8 @@ class MyDoc extends Document {
                         height: "100vh",
                         padding: "50px 0",
                         backgroundColor: "#ddd",
-                        boxSizing: "border-box"
+                        boxSizing: "border-box",
+                        fontFamily: "Open Sans, sans-serif"
                     }}
                 >
                     {/* from next js documentation */}
