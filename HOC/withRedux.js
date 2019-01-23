@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 // mapState fn
 // ------------------------------------------------------------
 const mapStateFromProps = state => {
-    console.log(state);
+    // console.log(state);
     return state;
 };
 // ------------------------------------------------------------
