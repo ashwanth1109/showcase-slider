@@ -1,4 +1,4 @@
-import { bg, w, m, flex, pos, h } from "./style";
+import { w, m, flex, pos } from "./style";
 
 // ------------------------------------------------------------
 // index
