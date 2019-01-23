@@ -17,14 +17,15 @@ class Index extends React.Component {
             }
         });
         const data = await res.json();
-        const urls = extractURL(data);
-        updateState("IMAGES", urls);
+        const urlArrays = extractURL(data);
+        updateState("IMAGES1", urlArrays[0]);
+        updateState("IMAGES2", urlArrays[1]);
     }
-    render() {
+    render({ images1, images2 } = this.props) {
         return (
             <div style={s.container}>
-                <ProjectShowcase />
-                <ProjectShowcase />
+                <ProjectShowcase images={images1} />
+                <ProjectShowcase images={images2} />
             </div>
         );
     }
