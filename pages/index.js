@@ -11,6 +11,7 @@ class Index extends React.Component {
     render() {
         return (
             <div style={s.container}>
+                {/* Project Showcase Component */}
                 <ProjectShowcase
                     images={this.props.images1} // images array state from mapState
                     actionType="IMAGES1" // redux action dispatcher type to store state
@@ -36,6 +37,6 @@ class Index extends React.Component {
     }
 }
 // ------------------------------------------------------------
-// export index
+// export index with mapState integration
 // ------------------------------------------------------------
-export default withRedux(Index, true, true);
+export default withRedux(Index, true, false);
