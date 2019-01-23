@@ -14,6 +14,11 @@ export const fScreen = {
     height: "100vh"
 };
 
+export const fSize = {
+    width: "100%",
+    height: "100%"
+};
+
 export const w = {
     w100p: {
         width: "100%"
@@ -26,6 +31,9 @@ export const w = {
 export const h = {
     h200: {
         height: "200px"
+    },
+    h100p: {
+        height: "100%"
     }
 };
 
@@ -49,6 +57,12 @@ export const flex = {
 export const pos = {
     justifyEvenly: {
         justifyContent: "space-evenly"
+    },
+    alignCenter: {
+        alignItems: "center"
+    },
+    justifyBetween: {
+        justifyContent: "space-between"
     }
 };
 
