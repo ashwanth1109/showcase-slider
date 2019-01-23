@@ -16,10 +16,6 @@ app.prepare()
         const server = express();
         server.use(express.json());
 
-        server.get("/unsplash", (req, res) => {
-            res.status(200).json({ test: "Route works" });
-        });
-
         server.get("*", (req, res) => handler(req, res));
 
         server.listen(port, err => {
