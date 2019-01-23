@@ -2,12 +2,6 @@ import { projectShowcase as s } from "../styles/component";
 import withRedux from "../HOC/withRedux";
 
 class ProjectShowcase extends React.Component {
-    render() {
-        return (
-            <div style={s.container}>
-                <div />
-            </div>
-        );
     state = {
         first: {
             w: 400,
@@ -30,45 +24,99 @@ class ProjectShowcase extends React.Component {
             incompleteColor: "#00000080"
         }
     };
-    }
-}
 
-// class ProjectShowcase extends React.Component {
-//     state = {
-//         width: "0px"
-//     };
-//     componentDidMount() {
-//         setTimeout(() => {
-//             this.setState({
-//                 width: "400px"
-//             });
-//         }, 500);
-//     }
-//     render() {
-//         return (
-//             <div
-//                 style={{
-//                     width: this.state.width,
-//                     height: "200px",
-//                     backgroundColor: "#fff",
-//                     transition: "4s ease-in-out width",
-//                     objectFit: "cover",
-//                     overflow: "hidden",
-//                     maxHeight: "200px"
-//                 }}
-//             >
-//                 <img
-//                     src="https://www.w3schools.com/w3css/img_lights.jpg"
-//                     style={{
-//                         width: "400px",
-//                         height: "200px",
-//                         objectFit: "cover"
-//                     }}
-//                 />
-//             </div>
-//         );
-//     }
-// }
+    componentDidMount({ progress } = this.state) {
+        setTimeout(() => {
+            progress.complete = 400;
+            progress.incomplete = 0;
+            this.setState({
+                progress
+            });
+        }, 2000);
+        this.timer = setInterval(() => {
+            this.step1(
+                this.state.first,
+                this.state.second,
+                this.state.progress
+            );
+        }, 4000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timer);
+    }
+
+    // ------------------------------------------------------------
+    // first moves left, second moves left simultaneously
+    // ------------------------------------------------------------
+    step1 = (first, second, progress) => {
+        first.position = -400;
+        second.position = 0;
+        progress.completeColor = "#00000080";
+        this.setState({
+            first,
+            second,
+            dotId: second.id,
+            progress
+        });
+        setTimeout(() => {
+            progress.transition = false;
+            progress.incomplete = 400;
+            progress.complete = 0;
+            progress.completeColor = "#ffffff80";
+            this.setState({
+                progress
+            });
+            setTimeout(() => {
+                progress.transition = true;
+                progress.incomplete = 0;
+                progress.complete = 400;
+                this.setState({ progress });
+                this.step2(first, second);
+            }, 100);
+        }, 1900);
+    };
+    // ------------------------------------------------------------
+    // turn off transition
+    // ------------------------------------------------------------
+    step2 = (first, second) => {
+        first.t = false;
+        second.t = false;
+        this.setState({
+            first,
+            second
+        });
+        this.step3(first, second);
+    };
+
+    // ------------------------------------------------------------
+    // expand first and contract second, change first id to 1, second to 2
+    // ------------------------------------------------------------
+    step3 = (first, second, { images } = this.props) => {
+        first.id = second.id;
+        first.position = 0;
+        second.id = second.id + 1 === images.length ? 0 : second.id + 1;
+        second.position = 400;
+        this.setState({
+            first,
+            second
+        });
+        setTimeout(() => {
+            this.step4(first, second);
+        }, 100);
+    };
+    // ------------------------------------------------------------
+    // turn transitions back on
+    // ------------------------------------------------------------
+    step4 = (first, second) => {
+        first.t = true;
+        second.t = true;
+        this.setState({
+            first,
+            second
+        });
+    };
+
     render(
         { images } = this.props,
         { first, second, dotId, progress } = this.state
