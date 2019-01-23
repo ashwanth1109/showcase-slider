@@ -7,5 +7,8 @@ export const extractURL = (arr, urls = []) => {
         };
         urls.push(image);
     }
-    return urls;
+    return [
+        urls.slice(0, urls.length / 2),
+        urls.slice(urls.length / 2, urls.length)
+    ];
 };
