@@ -1,4 +1,4 @@
-import { w, m, flex, pos } from "./style";
+import { w, m, flex, pos, fSize, fCenter } from "./style";
 
 // ------------------------------------------------------------
 // index
@@ -8,7 +8,13 @@ export const index = {
         ...w.w100p,
         ...w.mw1000,
         ...m.hAuto,
-        ...flex.row,
-        ...pos.justifyEvenly
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
+        gridColumnGap: "10px",
+        gridRowGap: "30px"
+    },
+    gridItem: {
+        ...fSize,
+        ...fCenter
     }
 };
