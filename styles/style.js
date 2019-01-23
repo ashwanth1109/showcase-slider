@@ -23,8 +23,8 @@ export const w = {
     w100p: {
         width: "100%"
     },
-    w1000: {
-        width: "1000px"
+    mw1000: {
+        maxWidth: "1000px"
     }
 };
 
