@@ -22,6 +22,11 @@ class MyDoc extends Document {
                             margin: 0;
                             padding: 0;
                         }
+
+                        .card {
+                            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+                        }
+                        
                     `}</style>
                 </Head>
                 {/* Add body styles here */}
@@ -30,7 +35,7 @@ class MyDoc extends Document {
                         width: "100vw",
                         height: "100vh",
                         padding: "50px 0",
-                        backgroundColor: "#222",
+                        backgroundColor: "#ddd",
                         boxSizing: "border-box"
                     }}
                 >
